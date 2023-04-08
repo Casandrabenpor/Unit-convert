@@ -1,0 +1,147 @@
+.rectangle {
+  margin-left: 25%;
+  width: 714px;
+  height: 193px;
+  background: #2e0039;
+  box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 21px;
+  margin: 0 auto;
+  margin-top: 3%;
+ 
+}
+.selectInput {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  margin-left: 10%;
+}
+h2 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  color: #ffffff;
+  padding-top: 1%;
+  margin-left: 15%;
+}
+.selector {
+  width: 35%;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+.select {
+  width: 100%;
+  border: none;
+  background-color: #2e0039;
+  color: #ffffff;
+  border-bottom: 2px solid #ffffff;
+}
+.input {
+  width: 30%;
+}
+input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #ffffff;
+  background-color: #2e0039;
+  color: #ffffff;
+}
+.heart-outline {
+  display: flex;
+  flex-direction: row;
+}
+.heart-outline > ion-icon {
+  cursor: pointer;
+  margin-top: 7%;
+  margin-left: 10%;
+  color: #ffffff;
+  width: 60px;
+  height: 30px;
+}
+
+.unitConverter {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+  margin-top: 7%;
+  margin-left: 63%;
+  display: flex;
+  gap: 0.5em;
+}
+.icon{
+
+  width:15.5px;
+  height:13.5px;
+  color: white;
+  cursor: pointer;
+
+}
+
+@media only screen and (max-width: 1000px) {
+  .selectInput {
+    flex-direction: column;
+  }
+  .rectangle {
+    width: 349px;
+    height: 229px;
+  margin-left: 2%;
+  }
+
+  h2 {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    color: #ffffff;
+    padding-top: 1%;
+    margin-left: 6%;
+  }
+  .selector {
+    width: 90%;
+    margin-left: -5%;
+  }
+  .select {
+    width: 88%;
+    border: none;
+    background-color: #2e0039;
+    color: #ffffff;
+    border-bottom: 2px solid #ffffff;
+  }
+  .input {
+    width: 90%;
+    margin-left: -5%;
+  }
+  input {
+    width: 88%;
+    border: none;
+    border-bottom: 2px solid #ffffff;
+    background-color: #2e0039;
+    color: #ffffff;
+  }
+
+  .unitConverter {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #ffffff;
+    margin-top: 3%;
+    margin-left: 44%;
+  }
+  .heart-outline > ion-icon {
+    cursor: pointer;
+    margin-top: 3%;
+    margin-left: 1%;
+    color: #ffffff;
+    width: 60px;
+    height: 30px;
+  }
+}
