@@ -15,10 +15,11 @@
 .save_list {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: 0 auto;
   gap: 20px;
+  margin-top: 25%;
   width: 349px;
   height: 38px;
   background: #E3E3E3;

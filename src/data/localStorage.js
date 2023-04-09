@@ -25,7 +25,7 @@ export const deletePhotoFromLocalStorage = (convertToDelete) => {
     // elimina la foto que es igual al id
     let convert = convertData.data.filter(convert=> convertToDelete.id !== convert.id )
     //  para tener el valor de photos
-    convertData = convert;
+    convertData.data = convert;
     let json = JSON.stringify(convertData);
     // variable que mete la clave y el valor de localstorage
     localStorage.setItem("favoriteConvert",json);

@@ -7,6 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 import  icon from "../assets/Icon.png";
 
 
+
 export const Convert = (props) => {
   const [convertedValue, setConvertedValue] = useState(0);
   const [selectedValue, setSelectedValue] = useState("metres");
@@ -80,7 +81,7 @@ export const Convert = (props) => {
   const handleHeart = (event) => {
      
     event.preventDefault();
-    console.log("hola");
+    
     let convert = {
       id: uuidv4(),
       parameterUnit: selectedValue,
@@ -115,7 +116,7 @@ export const Convert = (props) => {
         </div>
         
         <div className="input">
-          <input type="text" name="text" id="convert" onChange={handleChange} />
+          <input type="number" name="text" id="convert" onChange={handleChange} />
         </div>
       </div>
       <div className="heart-outline" onClick={handleHeart}>
