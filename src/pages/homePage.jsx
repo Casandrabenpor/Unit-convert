@@ -8,11 +8,6 @@ import { Footer } from "../components/footer";
 
 
 export const HomePage = () =>{
-  
-
-
-
-
     return <>
     <TopBar/>
     <Convert/>

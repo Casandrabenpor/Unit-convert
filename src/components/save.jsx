@@ -43,7 +43,7 @@ export const Save = () => {
   });
 
   return (
-    <div>
+    <div className="save_height">
         <div>
             <p className="save">saved</p>
         </div>

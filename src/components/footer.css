@@ -6,7 +6,11 @@
   bottom: 0;
   background: #2e0039;
   justify-content: center;
+  z-index: 3;
+
+  
 }
+
 .footer p {
   font-family: "Poppins";
   font-style: normal;

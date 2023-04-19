@@ -8,9 +8,13 @@
   margin-left: 25%;
   margin-top: 5%;
 }
+.save_height{
+  min-height: 500px;
+}
 .column_save{
   display: grid;
   grid-template-columns: 60px 60px;
+ 
 }
 .save_list {
   display: flex;
@@ -23,8 +27,8 @@
   width: 349px;
   height: 38px;
   background: #E3E3E3;
-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
-border-radius: 10px;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 
 
 }
