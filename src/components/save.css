@@ -10,10 +10,13 @@
 }
 .save_height{
   min-height: 500px;
+
+
 }
 .column_save{
   display: grid;
   grid-template-columns: 60px 60px;
+  justify-content: space-around;
  
 }
 .save_list {

@@ -12,7 +12,7 @@ export const Save = () => {
   
     const handleCross = (event,favorite) =>{
     event.preventDefault();
-    console.log("hola");
+    
    
     dispatch(deleteToFavorite(favorite)); 
   };

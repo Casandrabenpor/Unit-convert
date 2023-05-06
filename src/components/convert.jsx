@@ -4,32 +4,46 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addToFavorite } from "../features/buttonSlice/favoriteSlice";
 import { v4 as uuidv4 } from 'uuid';
-import  icon from "../assets/Icon.png";
+import icon from "../assets/Icon.png";
 
 
 
 export const Convert = (props) => {
   const [convertedValue, setConvertedValue] = useState(0);
   const [selectedValue, setSelectedValue] = useState("metres");
-  const [inputValue, setInputValue] = useState(100);
+  const [inputValue, setInputValue] = useState(0);
   const [inputResult, setInputResult] = useState("miles");
+  const [isSaved, setIsSaved] = useState(false);
   const dispatch = useDispatch();
 
   const handleSelect = (event) => {
     setSelectedValue(event.target.value);
   };
 
+  const handleInversion = (e) => {
+    //parámetros
+    let selectedMetric = selectedValue;
+    setSelectedValue(inputResult);
+    setInputResult(selectedMetric);
+
+    //valores
+    let parameterValue = convertedValue;
+    setConvertedValue(inputValue);
+    setInputValue(parameterValue);
+  }
+
   const handleChange = (e) => {
     let result;
     setInputValue(e.target.value);
-   
+    setIsSaved(false);
+
     switch (selectedValue) {
       case "km":
         result = KmToMiles(e.target.value);
         setConvertedValue(result);
         setInputResult("miles");
         break;
-      case "miles":
+        case "miles":
         result = MilesToKm(e.target.value);
         setConvertedValue(result);
         setInputResult("km");
@@ -39,8 +53,8 @@ export const Convert = (props) => {
         setConvertedValue(result);
         setInputResult("metres");
         break;
-      case "metres":
-        result = MetresToFeet(e.target.value);
+        case "metres":
+          result = MetresToFeet(e.target.value);
         setConvertedValue(result);
         setInputResult("feet");
         break;
@@ -49,7 +63,7 @@ export const Convert = (props) => {
         setConvertedValue(result);
         setInputResult("inches");
         break;
-      case "inches":
+        case "inches":
         result = InchesToCm(e.target.value);
         setConvertedValue(result);
         setInputResult("cm");
@@ -57,6 +71,11 @@ export const Convert = (props) => {
       default:
         result = 0;
     }
+  };
+  const GetHearthIcon = (isSaved) => {
+    return isSaved
+      ? <ion-icon  name="heart" onClick={handleHeart}></ion-icon>
+      : <ion-icon name="heart-outline" onClick={handleHeart}></ion-icon>;
   };
 
   const KmToMiles = (km) => {
@@ -77,11 +96,11 @@ export const Convert = (props) => {
   const InchesToCm = (inches) => {
     return (inches * 2.54).toFixed(2);
   };
-  
+
   const handleHeart = (event) => {
-     
+
     event.preventDefault();
-    
+
     let convert = {
       id: uuidv4(),
       parameterUnit: selectedValue,
@@ -91,6 +110,7 @@ export const Convert = (props) => {
     };
 
     dispatch(addToFavorite(convert));
+    setIsSaved(true);
   };
 
   return (
@@ -110,23 +130,23 @@ export const Convert = (props) => {
             <option value="metres">metres → feet</option>
             <option value="cm">cm → inches</option>
             <option value="inches">inches → cm</option>
-           
+
           </select>
-          <img className="icon" src={icon} alt="icon" />
+          <img className="icon" src={icon} alt="icon" onClick={handleInversion} />
         </div>
-        
+
         <div className="input">
-          <input type="number" name="text" id="convert" onChange={handleChange} />
+          <input type="number" name="text" id="convert" onChange={handleChange} value={inputValue} />
         </div>
       </div>
-      <div className="heart-outline" onClick={handleHeart}>
-        <ion-icon name="heart-outline"></ion-icon>
+      <div className="heart-outline" >
+        {GetHearthIcon(isSaved)}
         <div className="unitConverter">
-        <p>{convertedValue} </p>
-        <p>{inputResult}</p>
+          <p>{convertedValue} </p>
+          <p>{inputResult}</p>
         </div>
       </div>
-      
+
     </div>
   );
-};
+}
